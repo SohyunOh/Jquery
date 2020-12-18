@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- jquery 라이브러리 -->
+    <script src="js/jquery.js"></script>
+
+</head>
+<body>
+    <input type="text" id="test1" readonly="readonly">
+    <div id="test02">테스트1</div>
+    <div id="test03" style="color: red;">테스트2</div>
+
+    <script>
+        //1.id가 test1인 태그의 id 확인
+        // console.log(document.getElementById("test1").id)
+
+        console.log($('#test1').attr("id"))
+
+        //2.readonly 확인
+        console.log( $('#test1').attr("readonly"))
+
+        //attr(속성,변경값) - 특덩 속성의 값을 변경할 수 있음
+        $("#test1").attr("id","변경할 값~");
+
+        //id가 test2인 innerHTML 값을 확인, 변경
+        // console.log(document.getElementById("test02").innerHTML)
+        console.log($("#test02").html())
+        
+        $("#test02").html("홍길자")//innerHTML을 대신함
+        $("#test02").html("")//innerHTML 값을 공백으로 
+
+
+        //id가 test03인 css값을 확인 , 변경
+        console.log($("#test03").css("color"))
+        $("#test03").css("color","blue");
+        $("#test03").css("backgroundColor", "red")
+        
+        //class추가
+        $("#test03").addClass("banner");
+        console.log($("#test03"));
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- jquery 라이브러리 -->
+        <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+
+    <script>
+        // window.onload = function(){
+        //     document.getElementById("btn").onclick=function(){
+        //         alert("kkk")
+        //     }
+        // }
+        
+        //js의 윈도우 load이벤트를 대체하는 구문
+        // $(window).on("load",function(){
+        //         document.getElementById("btn").onclick=function(){
+        //         alert("kkk")
+        //     }
+        // })
+
+        //js의 윈도우 load 이벤트를 재체하는 구문 - ready는 여러개 사용이 가능
+        
+        $(document).ready(function() {
+            document.getElementById("btn").onclick = function(){
+                alert("kkk");
+            }
+        });
+
+        </script>
+        
+        
+        <button type="button" id="btn">이벤트</button>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- jquery 라이브러리 -->
+        <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+    <ul id="test">
+        <li>태그1</li>
+        <li>태그2</li>
+        <li>태그3</li>
+    </ul>
+
+    <!-- <script>
+        //mission - li에 태그에 동일한 이벤트를 등록해라
+
+        //js이벤트 위임 (부모에 걸고 버블링을 통해 전파)
+        // var test = document.getElementById("test");
+        // test.onclick = function(){
+        //     console.log(event.target.innerHTML)
+        // }
+
+        //제이쿼리 이벤트 위임 on(이벤트 쿼리, 어떤 태그에 전파할지, 실행함수)
+        // $("#test").on("click", "li", function(){
+        //     console.log(event.target.innerHTML)
+        // })
+    </script> -->
+
+    <div id="div">
+        <!--  
+        <a href="tag">sdfsdf</a>
+        <a href="tag">sdfsdf</a>
+        <a href="tag">sdfsdf</a>
+        -->
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            
+            //a태그가 존재하지 않기 떄문에 동작하지 않음
+            // $("#div > a").click(function(){
+            //     event.preventDefault(); //고유 이벤트 중단
+            //     alert("경고창 뜨나요?")
+            // })
+
+            $("#div").on("click","a",function(){
+                event.preventDefault(); //고유 이벤트 중단
+                alert("경고창 뜨나요?")
+            })
+
+            var str = "";
+            str += "<a href='tag'>sdfsdf</a><br>";
+            str += "<a href='tag'>sdfsdf</a><br>";
+            str += "<a href='tag'>sdfsdf</a><br>";
+            $("#div").html(str);
+            
+        })
+    </script>
+</body>
+</html>

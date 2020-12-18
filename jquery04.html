@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- jquery 라이브러리 -->
+        <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+    <script>
+        // window.onload = function(){
+        //     document.getElementById("btn").onclick =function(){
+        //         alert("이벤트 실행")
+        //     }
+
+        //     document.getElementById("sel").onchange = function(){
+        //         alert("이벤트 실행됨")
+        //         console.log(event.target.value)
+        //     }
+        // }
+
+        $(document).ready(function(){
+            $("#btn").click(function(){ //제이쿼리 클릭이벤트 on이 없는 click함수
+                alert("이벤트 실행됨!");
+            })
+            $("#sel").change(function(){//제이쿼리 클릭이벤트 on이 없는 change함수
+                alert("이벤트 실행됨!");
+        //         console.log(event.target.value)
+                console.log($(this).val())
+
+            })
+        })
+    
+    </script>
+    <button type="button" id="btn">이벤트버튼</button>
+
+    <select id="sel">
+        <option>test1</option>
+        <option>test2</option>
+        <option>test3</option>
+    </select>
+
+</body>
+</html>
