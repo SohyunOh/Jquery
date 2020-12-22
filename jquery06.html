@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- jquery 라이브러리 -->
+        <script src="js/jquery.js"></script>
+</head>
+<body>
+
+    <button type="button" id="ajax" >제이쿼리 비동기</button>
+
+    <script>
+
+        $("#ajax").click(function(){
+            
+            $.ajax({
+                type:"post",/*보낼타입*/
+                url:"http://localhost:8282/myweb/getJson", /* 요청 경로*/
+                data : JSON.stringify({"bno":"1", "writer":"홍길동"}), /*보낼 데이터*/
+                //dataType: "application/json; charset=utf-8", /*서버에서 전달받는 제이터 타입지정 (생략가능)*/
+                contentType: "application/json; charset=utf-8", /* 보내는 데이터에 대한 타입 */
+                success: function(data) {
+                    console.log(data)
+                }, /*성공시 돌려받을 콜백함수*/
+                error : function(error) {
+                    console.log(error);
+                }   /*에러시  돌려받을 콜백함수*/
+            });
+        })
+    </script>
+    
+</body>
+</html>
